@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <KJ_SampleCode>
+            <version>1.0.2</version>
+        </KJ_SampleCode>
+    </modules>
+
+    <global>
+        <models>
+            <samplecode>
+                <class>KJ_SampleCode_Model</class>
+            </samplecode>
+        </models>
+
+        <blocks>
+            <samplecode>
+                <class>KJ_SampleCode_Model</class>
+            </samplecode>
+        </blocks>
+    </global>
+
+</config>
