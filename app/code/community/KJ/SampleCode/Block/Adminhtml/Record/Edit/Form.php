@@ -43,7 +43,7 @@ class KJ_SampleCode_Block_Adminhtml_Record_Edit_Form extends Mage_Adminhtml_Bloc
         ));
 
         $fieldset->addField('title', 'text', array(
-            'name'      => 'rule[title]',
+            'name'      => 'record[title]',
             'label'     => Mage::helper('core')->__('Title'),
             'required'  => true,
         ));

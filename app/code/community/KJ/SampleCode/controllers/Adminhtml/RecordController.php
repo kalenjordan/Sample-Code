@@ -33,6 +33,7 @@ class KJ_SampleCode_Adminhtml_RecordController extends Mage_Adminhtml_Controller
         }
 
         $record->save();
+        Mage::getSingleton('adminhtml/session')->addSuccess("Updated record: " . $record->getId());
         $this->_redirect('admin_samplecode/adminhtml_record');
 
         return $this;

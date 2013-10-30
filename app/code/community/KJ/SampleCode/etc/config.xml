@@ -20,4 +20,14 @@
         </blocks>
     </global>
 
+    <adminhtml>
+        <layout>
+            <updates>
+                <samplecode>
+                    <file>samplecode.xml</file>
+                </samplecode>
+            </updates>
+        </layout>
+    </adminhtml>
+
 </config>
