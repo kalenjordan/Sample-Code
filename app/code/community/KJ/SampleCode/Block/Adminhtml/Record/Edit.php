@@ -4,7 +4,7 @@ class KJ_SampleCode_Block_Adminhtml_Record_Edit extends Mage_Adminhtml_Block_Wid
 {
     public function __construct()
     {
-        $this->_objectId = 'id';
+        $this->_objectId = 'record_id';
         $this->_controller = 'adminhtml_record';
         $this->_blockGroup = 'samplecode';
 
@@ -12,11 +12,19 @@ class KJ_SampleCode_Block_Adminhtml_Record_Edit extends Mage_Adminhtml_Block_Wid
 
         parent::__construct();
 
+        $this->_addDeleteButton();
+
         $this->_removeButton('reset');
     }
 
-    public function getFormActionUrl()
+    protected function _addDeleteButton()
     {
-        return $this->getUrl('*/*/save');
+        $deleteUrl = $this->getDeleteUrl();
+        $confirmText = Mage::helper('adminhtml')->__('Sure you want to delete this?');
+        $this->_addButton('delete', array(
+            'label'     => 'Delete',
+            'onclick'   => "deleteConfirm('$confirmText', '$deleteUrl');",
+            'class'     => 'save',
+        ));
     }
 }

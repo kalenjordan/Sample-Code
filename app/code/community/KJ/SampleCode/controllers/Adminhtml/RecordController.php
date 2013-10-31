@@ -23,12 +23,16 @@ class KJ_SampleCode_Adminhtml_RecordController extends Mage_Adminhtml_Controller
         $this->renderLayout();
     }
 
+    public function newAction()
+    {
+        $this->_forward('edit');
+    }
+
     public function editAction()
     {
         Mage::register('current_record', $this->_getRecord());
         $this->_initAction();
         $this->_title($this->_getRecord()->getTitle());
-
         $this->renderLayout();
     }
 
@@ -42,7 +46,23 @@ class KJ_SampleCode_Adminhtml_RecordController extends Mage_Adminhtml_Controller
         }
 
         $record->save();
-        Mage::getSingleton('adminhtml/session')->addSuccess("Updated record: " . $record->getId());
+        Mage::getSingleton('adminhtml/session')->addSuccess("Saved record: " . $record->getTitle());
+        $this->_redirect('admin_samplecode/adminhtml_record');
+
+        return $this;
+    }
+
+    public function deleteAction()
+    {
+        $record = $this->_getRecord();
+        if (!$record->getId()) {
+            Mage::getSingleton('adminhtml/session')->addSuccess("Wasn't able to find the record");
+            $this->_redirect('admin_samplecode/adminhtml_record');
+            return $this;
+        }
+
+        $record->delete();
+        Mage::getSingleton('adminhtml/session')->addSuccess("Deleted record: " . $record->getTitle());
         $this->_redirect('admin_samplecode/adminhtml_record');
 
         return $this;
