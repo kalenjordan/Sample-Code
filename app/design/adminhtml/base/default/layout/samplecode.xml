@@ -1,6 +1,12 @@
 <?xml version="1.0"?>
 
 <layout>
+    <admin_samplecode_adminhtml_record_index>
+        <reference name="content">
+            <block type="samplecode/adminhtml_record" name="record"/>
+        </reference>
+    </admin_samplecode_adminhtml_record_index>
+
     <admin_samplecode_adminhtml_record_edit>
         <reference name="content">
             <block type="samplecode/adminhtml_record_edit" name="record_edit"/>

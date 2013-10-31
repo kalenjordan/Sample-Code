@@ -2,16 +2,25 @@
 
 class KJ_SampleCode_Adminhtml_RecordController extends Mage_Adminhtml_Controller_Action
 {
+    const RECORD_NAME = 'Records';
+
     protected $_record;
 
     protected function _initAction()
     {
-        $this->_title($this->__('Records'));
+        $this->_title($this->__(self::RECORD_NAME));
 
         $this->loadLayout()
             ->_setActiveMenu('sales/orders');
 
         return $this;
+    }
+
+    public function indexAction()
+    {
+        $this->_initAction();
+        $this->_title('Manage ' . self::RECORD_NAME);
+        $this->renderLayout();
     }
 
     public function editAction()

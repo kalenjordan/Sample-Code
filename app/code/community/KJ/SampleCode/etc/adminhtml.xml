@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <menu>
+        <promo module="autoemail" translate="title'">
+            <children>
+                <samplecode>
+                    <title>Sample Code</title>
+                    <sort_order>100</sort_order>
+                    <action>admin_samplecode/adminhtml_record</action>
+                </samplecode>
+            </children>
+        </promo>
+    </menu>
+
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <promo>
+                        <children>
+                            <samplecode>
+                                <title>Sample Code</title>
+                            </samplecode>
+                        </children>
+                    </promo>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
